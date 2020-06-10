@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gootabi</title>
+     <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   
+  </head>
+
+  <body>
+    <header>
+        <% if user_signed_in? %>  
+          <div class="user_nav grid-6">
+            <%= link_to "ログアウト", destroy_user_session_path, {method: :delete, class: "nav-link"} %>
+            <%= link_to "提案を受ける", new_plan_path, {method: :get, class: "nav-link"} %>
+            <%= link_to "レビューを書く", new_review_path, {method: :get, class: "nav-link"} %>
+          </div>
+        <% else %>
+          <div class="user_nav grid-6">
+            <%= link_to "ログイン", new_user_session_path, class: "post" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+          </div>
+        <% end %>
+    </header>
+    
+    <%= yield %>
+  </body>
+</html>

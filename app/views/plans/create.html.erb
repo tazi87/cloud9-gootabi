@@ -1,0 +1,21 @@
+<div class="contents row">
+  <div class="row-string">
+     <%= current_user.nickname %>さんにおすすめの場所はここ！<br>
+  </div>
+ 
+    <% @reviews.each do |review| %>
+     <div class="row-contents">
+        <div class="disp">
+          <div class="image-s"><%= image_tag(review.image, :size => '400x300') if review.image.present? %></div>
+          <div class="image-ss">
+            <!--<div class="placeinfo">-->
+              <div class="place"><%= review.place %></div>
+              <div class="rev"><%= review.review %></div>
+            <!--</div>-->
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
+
+ 

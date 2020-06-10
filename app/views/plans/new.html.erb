@@ -1,0 +1,27 @@
+<div class="purpo">
+  <p>あなたの旅行プランを提案します!</p>
+</div>
+<%= form_tag('/plans', method: :post) do %>
+  <dl>
+    <dt class>日帰り？それとも泊まり？</dt>
+    <dd class="radiobtn center">
+      <input type="radio" name="how_long" value="one_day" checked="checked">日帰り
+      <input type="radio" name="how_long" value="stay">泊まり
+    </dd>
+    <dt>誰と行く？</dt>
+    <dd class="radiobtn">
+      <input type="radio" name="with_who" value="alone" checked="checked">一人
+      <input type="radio" name="with_who" value="friend">友達
+      <input type="radio" name="with_who" value="family">家族
+    </dd>
+    
+    <dt>どんな旅行？</dt>
+    <dd class="radiobtn">
+      <input type="radio" name="purpose" value="view" checked="checked">絶景
+      <input type="radio" name="purpose" value="meal">グルメ
+    </dd>
+  </dl>
+  <div class="btn-input">
+    <input type="submit">
+  </div>
+<% end %>

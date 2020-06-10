@@ -1,0 +1,46 @@
+<%= form_tag('/reviews', method: :post) do %>
+  <dl class="header-margin">
+    <div>
+      <dt>日帰り？それとも泊まり？</dt>
+      <dd class="radiobtn radiobtn1">
+        <input type="radio" name="how_l" value="one_day" checked="checked">日帰り
+        <input type="radio" name="how_l" value="stay">泊まり
+      </dd>
+    </div>
+    
+    <div>
+      <dt>誰と行く？</dt>
+      <dd class="radiobtn">
+        <input type="radio" name="with_w" value="alone" checked="checked">一人
+        <input type="radio" name="with_w" value="friend">友達
+        <input type="radio" name="with_w" value="family">家族
+      </dd>
+    </div>
+    
+    <div>
+      <dt>どんな旅行？</dt>
+      <dd class="radiobtn">
+        <input type="radio" name="purp" value="view" checked="checked">絶景
+        <input type="radio" name="purp" value="meal">グルメ
+      </dd>
+    </div>
+    
+    <div>
+      <dt>どこに行きましたか？</dt>
+      <dd> <input type="text" name="place" placeholder="場所名を記入してください"></dd>
+    </div>
+    
+    <div class="urltext">
+      <dt> 画像のURLを貼り付けてください</dt>
+      <dd> <input type="text" class="imgurl" name="image" placeholder="Image Url"></dd>
+    </div>
+    
+    <div class="review-text">
+      <dt>レビューを書いてください</dt>
+      <dd> <textarea name="review" id="" cols="30" rows="10"></textarea></dd>
+    </div>
+  </dl>
+  <div class="btn-input">
+    <input type="submit">
+  </div>
+<% end %>
